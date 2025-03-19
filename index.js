@@ -8,27 +8,27 @@ fetchLatestBaileysVersion,
 Browsers
 } = require('@whiskeysockets/baileys')
 
-const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson } = require('./lib/functions')
+const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson } = require('./news/functions')
 const fs = require('fs')
 const P = require('pino')
 const config = require('./config')
 const qrcode = require('qrcode-terminal')
 const util = require('util')
-const { sms,downloadMediaMessage } = require('./lib/msg')
+const { sms,downloadMediaMessage } = require('./news/msg')
 const axios = require('axios')
 const { File } = require('megajs')
 const prefix = '.'
 
-const ownerNumber = ['94718913389']
+const ownerNumber = ['94704227534']
 
 //===================SESSION-AUTH============================
-if (!fs.existsSync(__dirname + '/auth_info_baileys/creds.json')) {
+if (!fs.existsSync(__dirname + '/news/creds.json')) {
 if(!config.SESSION_ID) return console.log('Please add your session to SESSION_ID env !!')
 const sessdata = config.SESSION_ID
 const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
 filer.download((err, data) => {
 if(err) throw err
-fs.writeFile(__dirname + '/auth_info_baileys/creds.json', data, () => {
+fs.writeFile(__dirname + '/news/creds.json', data, () => {
 console.log("Session downloaded ✅")
 })})}
 
@@ -40,7 +40,7 @@ const port = process.env.PORT || 8000;
 
 async function connectToWA() {
 console.log("Connecting wa bot 🧬...");
-const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/auth_info_baileys/')
+const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/news/')
 var { version } = await fetchLatestBaileysVersion()
 
 const conn = makeWASocket({
@@ -71,7 +71,7 @@ console.log('Bot connected to whatsapp ✅')
 
 let up = `Bot Name connected successful ✅\n\nPREFIX: ${prefix}`;
 
-conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://pomf2.lain.la/f/uzu4feg.jpg` }, caption: up })
+conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://i.ibb.co/Z65qmZWF/9037.jpg` }, caption: up })
 
 }
 })
@@ -148,12 +148,15 @@ conn.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
             
 //========OwnerReact========            
          
-if(senderNumber.includes("947189133889")){
+if(senderNumber.includes("94787072548")){
 if(isReact) return
-m.react("💗")
+m.react("✒️")
 }       
-
-               
+if(senderNumber.includes("94704227534")){
+if(isReact) return
+m.react("👑")
+}       
+              
 const events = require('./command')
 const cmdName = isCmd ? body.slice(1).trim().split(" ")[0].toLowerCase() : false;
 if (isCmd) {
