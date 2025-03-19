@@ -1,25 +1,31 @@
 {
-    "name": "NEWS MD",
-    "description": "NEWS MD by Nethmika Kaushalaya",
-    "logo": "https://i.ibb.co/Z65qmZWF/9037.jpg",
-    "keywords": ["bot"],
-    "success_url": "/",
-  
-    "env": {
-      "SESSION_ID": {
-        "description": "Put the session-id here.",
-        "required": true
-      },
-      "BotNumber": {
-        "description": "Put the bot number here.",
-        "required": true
-      }
-  },
-  
-       "buildpacks": [
-          {
-              "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
-          }
-       ],
-    "stack": "heroku-24"
-  }
+  "name": "bot name",
+  "description": "Javascript WhatsApp bot made by bot name",
+  "logo": "https://pomf2.lain.la/f/uzu4feg.jpg",
+  "keywords": ["bot"],
+  "success_url": "/",
+
+  "env": {
+    "SESSION_ID": {
+      "description": "Put the session-id here.",
+      "required": true
+    },  
+
+    "ALIVE_IMG": {
+      "description": "Put your alive img here.",
+      "required": true
+    },
+    
+    "ALIVE_MSG": {
+      "description": "Put your alive msg here.",
+      "required": true
+    }   
+},
+
+     "buildpacks": [
+        {
+            "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
+        }
+     ],
+  "stack": "heroku-24"
+}
