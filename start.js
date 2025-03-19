@@ -11,7 +11,7 @@ Browsers
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson } = require('./news/functions')
 const fs = require('fs')
 const P = require('pino')
-const config = require('./settings')
+const config = require('./config')
 const qrcode = require('qrcode-terminal')
 const util = require('util')
 const { sms,downloadMediaMessage } = require('./news/msg')
@@ -22,15 +22,18 @@ const prefix = '.'
 const ownerNumber = ['94704227534']
 
 //===================SESSION-AUTH============================
-if (!fs.existsSync(__dirname + '/session/creds.json')) {
-if(!config.SESSION_ID) return console.log('Please add your session to SESSION_ID env !!')
-const sessdata = config.SESSION_ID
-const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
-filer.download((err, data) => {
-if(err) throw err
-fs.writeFile(__dirname + '/session/creds.json', data, () => {
-console.log("Session downloaded ✅")
-})})}
+
+if (!fs.existsSync(__dirname + '/news/creds.json')) {
+    if (!config.SESSION_ID) return console.log('Please add your session to SESSION_ID env !!');
+    const sessdata = config.SESSION_ID;
+    const filer = File.fromURL(`https://mega.nz/file/${sessdata}`);
+    filer.download((err, data) => {
+        if (err) throw err;
+        fs.writeFile(__dirname + '/news/creds.json', data, () => {
+            console.log("Session downloaded ✅");
+        });
+    });
+}
 
 const express = require("express");
 const app = express();
@@ -40,7 +43,7 @@ const port = process.env.PORT || 8000;
 
 async function connectToWA() {
 console.log("Connecting NETHU MD BOT 🧬...");
-const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/session/')
+const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/news/')
 var { version } = await fetchLatestBaileysVersion()
 
 const conn = makeWASocket({
@@ -61,9 +64,9 @@ connectToWA()
 } else if (connection === 'open') {
 console.log('🧬 Installing')
 const path = require('path');
-fs.readdirSync("./news/assets/").forEach((plugin) => {
+fs.readdirSync("./assets/").forEach((plugin) => {
 if (path.extname(plugin).toLowerCase() == ".js") {
-require("./news/assets/" + plugin);
+require("./assets/" + plugin);
 }
 });
 console.log('Plugins installed successful ✅')
