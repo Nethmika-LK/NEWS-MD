@@ -1,21 +1,13 @@
 {
-    "name": "Queen Spriky MD",
-    "description": "Queen Spriky MD by Udavin Wijesundara",
-    "logo": "https://github.com/uwtechshow-official/Spriky-Database/blob/main/Logo/Bot.jpg?raw=true",
+    "name": "NEWS MD",
+    "description": "NEWS MD by Nethmika Kaushalaya",
+    "logo": "https://i.ibb.co/Z65qmZWF/9037.jpg",
     "keywords": ["bot"],
     "success_url": "/",
   
     "env": {
       "SESSION_ID": {
         "description": "Put the session-id here.",
-        "required": true
-      },
-      "MONGODB": {
-        "description": "Put the mongodb url here.",
-        "required": true
-      },
-      "OwnerNumber": {
-        "description": "Put the owner number here.",
         "required": true
       },
       "BotNumber": {
