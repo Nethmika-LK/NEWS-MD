@@ -1,7 +1,7 @@
 {
-  "name": "bot name",
-  "description": "Javascript WhatsApp bot made by bot name",
-  "logo": "https://pomf2.lain.la/f/uzu4feg.jpg",
+  "name": "news-md",
+  "description": "Javascript WhatsApp bot made by news md",
+  "logo": "https://i.ibb.co/Z65qmZWF/9037.jpg",
   "keywords": ["bot"],
   "success_url": "/",
 
