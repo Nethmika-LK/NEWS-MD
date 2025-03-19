@@ -1,5 +1,5 @@
 {
-  "name": "yout bot name",
+  "name": "NEWS-MD",
   "version": "1.0.0",
   "description": "A WhatsApp bot created using Node.js",
   "main": "index.js",
@@ -9,11 +9,10 @@
     "restart": "pm2 restart Your Bot name"
   },
   "dependencies": {
-    "@whiskeysockets/baileys": "6.6.0",
+    "@whiskeysockets/baileys": "npm:asitha-baliyes-new",
     "@adiwajshing/keyed-db": "^0.2.4",
-    "google-tts-api": "^2.0.2",
     "pino": "^7.0.5",
-    "pm2": "^5.2.0",
+    "pm2": "^6.0.5",
     "util": "^0.12.4",
     "express": "latest",
     "async-g-i-s": "^1.4.0",
@@ -31,17 +30,6 @@
     "yt-search" : "2.11.1",
     "api-dylux" : "1.8.5",
     "cheerio" : "1.0.0",
-    "g-i-s": "^2.1.7",
-    "mfiredlcore-vihangayt": "^1.0.0",
-    "@bochilteam/scraper": "latest",
-    "@sl-code-lords/si-subdl": "^1.1.1",
-    "@sl-code-lords/esana-news": "latest",
-    "@ffmpeg-installer/ffmpeg": "^1.1.0",
-    "@blackamda/telegram-image-url": "^1.0.0",
-    "youtubedl-core": "^4.11.5",
-    "moment-timezone": "latest",
     "file_size_url": "^1.0.4"
-
-
   }
 }
